@@ -1,0 +1,14 @@
+html
+  include partials/head.pug
+  body
+    include partials/nav.pug
+    .container
+      h1 Giraffe Watch
+
+      if alert
+        .alert(role='alert' class='alert-' + alert.type)= alert.message
+
+      h2 Congratulations!
+      p You've subscribed the phone number <strong>#{phoneNumber}</strong> to Giraffe Watch. Now get back to your day!
+
+    include partials/footer.pug

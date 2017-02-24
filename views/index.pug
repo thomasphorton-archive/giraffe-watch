@@ -1,0 +1,20 @@
+html
+  include partials/head.pug
+  body
+    include partials/nav.pug
+    .container
+      h1 Giraffe Watch
+
+      if alert
+        .alert(role='alert' class='alert-' + alert.type)= alert.message
+
+      p Enter your phone number below to be alerted by text message if anything important happens. We promise not to spam you, this is just to help you all get back to work!
+
+      form(method='post' action='/submit')
+        .form-group
+          input(type='number' placeholder='Enter Your Phone Number' name="phoneNumber").form-control
+          p
+          button(type='submit').btn.btn-primary Submit
+          p 
+
+    include partials/footer.pug

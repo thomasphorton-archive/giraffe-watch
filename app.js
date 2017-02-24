@@ -10,7 +10,7 @@ var sns = new AWS.SNS({
 });
 
 var config = {
-  port: 3000
+  port: 80
 }
 
 var exports = {};

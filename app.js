@@ -44,28 +44,41 @@ app.get('/privacy', function (req, res) {
 
 app.post('/submit', function(req, res) {
   console.log('POST submit');
-  console.log('Phone Number submitted (%s)', req.body.phoneNumber);
+  var phoneNumber = req.body.phoneNumber;
 
-  var params = {
-    Protocol: 'sms',
-    TopicArn: 'arn:aws:sns:us-west-2:847623936431:giraffe-watch',
-    Endpoint: req.body.phoneNumber
-  };
+  if (phoneNumber.length == 11) {
+    var params = {
+      Protocol: 'sms',
+      TopicArn: 'arn:aws:sns:us-west-2:847623936431:giraffe-watch',
+      Endpoint: phoneNumber
+    };
 
-  sns.subscribe(params, function(err, data) {
-    if (err) console.log(err, err.stack);
-    else
-      console.log(data);
-  });
+    sns.subscribe(params, function(err, data) {
+      if (err) {
+        console.log('sns subscribe error');
+        console.log(err, err.stack);
 
-  res.render('subscribe', {
-    phoneNumber: req.body.phoneNumber
-  });
-})
-
-app.get('/confirm', function(req, res) {
-
-})
+        res.render('index', {
+          alert: {
+            type: 'danger',
+            message: 'An error occurred while subscribing. Please try again in a few minutes.'
+          }
+        });
+      } else
+        console.log('Subscribed: %s', phoneNumber);
+        res.render('subscribe', {
+          phoneNumber: phoneNumber
+        });
+    });
+  } else {
+    res.render('index', {
+      alert: {
+        type: 'danger',
+        message: 'Could not subscribe that number. Phone numbers must be 11 digits, including the country code (1-XXX-YYY-ZZZZ).'
+      }
+    });
+  }
+});
 
 app.listen(config.port, function () {
   console.log('Giraffe Watch running on port %s!', config.port);

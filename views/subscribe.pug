@@ -10,13 +10,12 @@ html
       if alert
         .alert(role='alert' class='alert-' + alert.type)= alert.message
 
-      h2 Congratulations!
+      h2 You did it!
       p You've subscribed the phone number <strong>#{phoneNumber}</strong> to Giraffe Watch. Now get back to your day!
 
-      p Want to say thanks? Click an ad on the site!
+      p Want to say thanks? 
+        a(href='https://paypal.me/thomasphorton/5') Send some money to fuel our ramen addiction.
 
       p Make sure you share with your friends!
-
-      include partials/ad.pug
 
     include partials/footer.pug

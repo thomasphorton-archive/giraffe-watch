@@ -3,19 +3,17 @@ html
   body
     include partials/nav.pug
     .container
-      h1 Giraffe Watch
+      .col
+        h1 Giraffe Watch
 
-      include partials/ad.pug
+        include partials/ad.pug
+        include partials/alert.pug
 
-      if alert
-        .alert(role='alert' class='alert-' + alert.type)= alert.message
+        h2 You did it!
+        p You've subscribed the phone number <strong>#{phoneNumber}</strong> to Giraffe Watch. Now get back to your day!
 
-      h2 You did it!
-      p You've subscribed the phone number <strong>#{phoneNumber}</strong> to Giraffe Watch. Now get back to your day!
+        include partials/donate.pug
 
-      p Want to say thanks? 
-        a(href='https://paypal.me/thomasphorton/5') Send some money to fuel our ramen addiction.
-
-      p Make sure you share with your friends!
+        p Make sure you share with your friends!
 
     include partials/footer.pug

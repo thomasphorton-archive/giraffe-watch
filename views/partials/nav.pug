@@ -1,4 +1,14 @@
 header.navbar.navbar-light.navbar-toggleable-md
   nav.container
     .d-flex.justify-content-between.hidden-lg-up
-      a.navbar-brand(href='/') Home
+      a.navbar-brand(href='/') Giraffe Watch!
+      button.navbar-toggler(type='button' data-toggle='collapse' data-target='#main-nav')
+        span.navbar-toggler-icon
+    .navbar-collapse.collapse#main-nav
+      ul.nav.navbar-nav
+        li.nav-item
+          a.nav-item.nav-link(href='/') Sign Up
+        li.nav-item
+          a.nav-item.nav-link(href='/watch') Watch
+        li.nav-item
+          a.nav-item.nav-link(href='/facts') Giraffe Facts

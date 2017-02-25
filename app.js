@@ -35,6 +35,22 @@ app.get('/', function (req, res) {
   });
 });
 
+app.get('/watch', function (req, res) {
+  console.log('GET watch');
+
+  res.render('watch', {
+    title: 'Title'
+  });
+});
+
+app.get('/facts', function (req, res) {
+  console.log('GET facts');
+
+  res.render('facts', {
+    title: 'Title'
+  });
+});
+
 app.get('/privacy', function (req, res) {
   console.log('GET privacy');
   res.render('privacy', {

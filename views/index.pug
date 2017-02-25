@@ -3,24 +3,24 @@ html
   body
     include partials/nav.pug
     .container
-      h1 Giraffe Watch
+      .col
+        h1 Giraffe Watch
 
-      include partials/ad.pug
+        include partials/ad.pug
+        include partials/alert.pug
 
-      if alert
-        .alert(role='alert' class='alert-' + alert.type)= alert.message
+        h2 Sign up for a Giraffe Birth Alert!
 
-      p Enter your phone number below to be alerted by text message if anything important happens. We promise not to spam you, this is just to help you all get back to work!
+        p Enter your phone number below to be alerted by text message if anything important happens. We promise not to spam you, this is just to help you all get back to work!
 
-      form(method='post' action='/submit')
-        .form-group
-          input(type='number' placeholder='Enter Your Phone Number' name='phoneNumber' required).form-control
-        .form-group
-          sub <sup>*</sup>If you're in the US, the number must include the 1 before the area code- (ie 13336668888). Not sure about other countries.
-        .form-group
-          button(type='submit').btn.btn-primary Submit
+        form(method='post' action='/submit')
+          .form-group
+            input(type='number' placeholder='Enter Your Phone Number' name='phoneNumber' required).form-control
+          .form-group
+            sub <sup>*</sup>If you're in the US, the number must include the 1 before the area code- (ie 13336668888). Not sure about other countries.
+          .form-group
+            button(type='submit').btn.btn-primary Submit
 
-      p Want to say thanks? 
-        a(href='https://paypal.me/thomasphorton/5') Send some money to fuel our ramen addiction.
+        include partials/donate.pug
 
     include partials/footer.pug

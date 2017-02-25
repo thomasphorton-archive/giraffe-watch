@@ -28,6 +28,7 @@ app.use(express.static('public'))
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.get('/', function (req, res) {
+  console.log('GET index');
 
   res.render('index', {
     title: 'Title'
@@ -35,14 +36,15 @@ app.get('/', function (req, res) {
 });
 
 app.get('/privacy', function (req, res) {
-
+  console.log('GET privacy');
   res.render('privacy', {
     title: 'Title'
   });
 });
 
 app.post('/submit', function(req, res) {
-  console.log(req.body);
+  console.log('POST submit');
+  console.log('Phone Number submitted (%s)', req.body.phoneNumber);
 
   var params = {
     Protocol: 'sms',
@@ -66,5 +68,5 @@ app.get('/confirm', function(req, res) {
 })
 
 app.listen(config.port, function () {
-  console.log('Example app listening on port %s!', config.port);
+  console.log('Giraffe Watch running on port %s!', config.port);
 });

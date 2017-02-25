@@ -14,13 +14,13 @@ html
 
       form(method='post' action='/submit')
         .form-group
-          input(type='number' placeholder='Enter Your Phone Number' name="phoneNumber").form-control
-          p (If you're in the US, the number must include the 1 before the area code- ie 13336668888). Not sure about other countries.
+          input(type='number' placeholder='Enter Your Phone Number' name='phoneNumber' required).form-control
+        .form-group
+          sub <sup>*</sup>If you're in the US, the number must include the 1 before the area code- (ie 13336668888). Not sure about other countries.
+        .form-group
           button(type='submit').btn.btn-primary Submit
-          p 
 
-      p Want to say thanks? Send some money to fuel our ramen addiction.
-      a(href='https://paypal.me/thomasphorton/5')
-        h2 Donate to the Ramen Fund
+      p Want to say thanks? 
+        a(href='https://paypal.me/thomasphorton/5') Send some money to fuel our ramen addiction.
 
     include partials/footer.pug

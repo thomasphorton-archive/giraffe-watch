@@ -11,3 +11,11 @@
   border-top: 1px solid #DDD;
   padding-top: 0.5em;
 }
+
+ins {
+  max-width: 100%;
+}
+
+p {
+  margin-top: 0.5em;
+}

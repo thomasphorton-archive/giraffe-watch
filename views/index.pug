@@ -5,6 +5,8 @@ html
     .container
       h1 Giraffe Watch
 
+      include partials/ad.pug
+
       if alert
         .alert(role='alert' class='alert-' + alert.type)= alert.message
 

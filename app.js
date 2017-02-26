@@ -64,7 +64,7 @@ app.get('/submit', function(req, res) {
     title: 'Subscribed to Giraffe Watch!',
     phoneNumber: 'X-XXX-XXX-XXXX'
   });
-})
+});
 
 app.post('/submit', function(req, res) {
   console.log('POST submit');
@@ -106,6 +106,13 @@ app.post('/submit', function(req, res) {
     });
   }
 });
+
+app.get('/comments', function(req, res) {
+  res.render('comments', {
+    title: 'Giraffe Watch Discusion!'
+  });
+})
+
 
 app.listen(config.port, function () {
   console.log('Giraffe Watch running on port %s!', config.port);

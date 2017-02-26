@@ -1,0 +1,29 @@
+html
+  include partials/head.pug
+  body
+    include partials/nav.pug
+    .container
+      .row
+        .col-md-8
+          h1 Giraffe Watch Comments
+
+          include partials/ad.pug
+          include partials/alert.pug
+
+          #disqus_thread
+          script.
+            (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = '//giraffe-watch.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+            })();
+          noscript Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+
+          include partials/donate.pug
+          include partials/facebook.pug
+
+        .col-md-4
+          include partials/twitter.pug
+
+    include partials/footer.pug

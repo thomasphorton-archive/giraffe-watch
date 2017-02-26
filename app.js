@@ -94,9 +94,9 @@ app.post('/submit', function(req, res) {
   var email = req.body.email;
 
   var params = {
-    Protocol: 'sms',
+    Protocol: 'email',
     TopicArn: 'arn:aws:sns:us-west-2:847623936431:giraffe-watch',
-    Endpoint: 'email'
+    Endpoint: email
   };
 
   sns.subscribe(params, function(err, data) {
@@ -117,7 +117,7 @@ app.post('/submit', function(req, res) {
         title: 'Subscribed to Giraffe Watch!',
         email: email
       });
-  });
+  
 });
 
 app.get('/comments', function(req, res) {

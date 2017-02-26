@@ -2,6 +2,7 @@ p Make sure you share with your friends!
 button.btn.btn-primary#btn-fb-share Share on Facebook
 script.
   document.getElementById('btn-fb-share').onclick = function() {
+    ga('send', 'event', 'Facebook Share', 'Click', location.href);
     FB.ui({
       method: 'share',
       display: 'popup',

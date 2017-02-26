@@ -1,2 +1,6 @@
 p Want to say thanks? 
-  a(href='https://paypal.me/thomasphorton/5') Send some beer money.
+  a(href='https://paypal.me/thomasphorton/5')#donate-link Send some beer money.
+script.
+  document.getElementById('donate-link').onclick = function() {
+    ga('send', 'event', 'Donate Link', 'Click', location.href);
+  }

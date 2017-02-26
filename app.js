@@ -84,57 +84,47 @@ app.get('/submit', function(req, res) {
 
   res.render('subscribe', {
     title: 'Subscribed to Giraffe Watch!',
-    phoneNumber: 'X-XXX-XXX-XXXX'
+    email: 'test@example.com'
   });
 });
 
 app.post('/submit', function(req, res) {
   console.log('POST submit');
 
-  var phoneNumber = req.body.phoneNumber;
-  if (phoneNumber.length == 11) {
-    var params = {
-      Protocol: 'sms',
-      TopicArn: 'arn:aws:sns:us-west-2:847623936431:giraffe-watch',
-      Endpoint: phoneNumber
-    };
+  var email = req.body.email;
 
-    sns.subscribe(params, function(err, data) {
-      if (err) {
-        console.log('sns subscribe error');
-        console.log(err, err.stack);
+  var params = {
+    Protocol: 'sms',
+    TopicArn: 'arn:aws:sns:us-west-2:847623936431:giraffe-watch',
+    Endpoint: 'email'
+  };
 
-        res.render('index', {
-          title: 'Giraffe Watch!',
-          alert: {
-            type: 'danger',
-            message: 'An error occurred while subscribing. Please try again in a few minutes.'
-          }
-        });
-      } else
-        console.log('Subscribed: %s', phoneNumber);
-        res.render('subscribe', {
-          title: 'Subscribed to Giraffe Watch!',
-          phoneNumber: phoneNumber
-        });
-    });
-  } else {
-    res.render('index', {
-      title: 'Giraffe Watch!',
-      alert: {
-        type: 'danger',
-        message: 'Could not subscribe that number. Phone numbers must be 11 digits, including the country code (1-XXX-YYY-ZZZZ).'
-      }
-    });
-  }
+  sns.subscribe(params, function(err, data) {
+    if (err) {
+      console.log('sns subscribe error');
+      console.log(err, err.stack);
+
+      res.render('index', {
+        title: 'Giraffe Watch!',
+        alert: {
+          type: 'danger',
+          message: 'An error occurred while subscribing. Please try again in a few minutes.'
+        }
+      });
+    } else
+      console.log('Subscribed: %s', email);
+      res.render('subscribe', {
+        title: 'Subscribed to Giraffe Watch!',
+        email: email
+      });
+  });
 });
 
 app.get('/comments', function(req, res) {
   res.render('comments', {
     title: 'Giraffe Watch Discusion!'
   });
-})
-
+});
 
 app.listen(config.port, function () {
   console.log('Giraffe Watch running on port %s!', config.port);

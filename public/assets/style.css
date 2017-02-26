@@ -3,22 +3,6 @@ header {
   margin-bottom: 0.5em;
 }
 
-.media-list-col {
-	margin-bottom: 1.5em;
-}
-
-.media-list-img {
-	max-width: 100%;
-}
-
-.footer {
-  margin-top: 2em;
-  padding: 4em 0;
-  background-color: #f7f7f7;
-  color: #636c72;
-  font-size: 0.7em;
-}
-
 ins {
   max-width: 100%;
 }
@@ -27,12 +11,21 @@ sub {
   line-height: 1.4em;
 }
 
-p {
-  margin-top: 0.5em;
-}
-
 .youtube {
   max-width: 100%;
+}
+
+.footer {
+  margin-top: 2em;
+  padding: 4em 0;
+  background-color: #f7f7f7;
+  color: #636c72;
+  font-size: 0.9em;
+}
+
+.footer a {
+  font-weight: 500;
+  color: #464a4c;
 }
 
 .footer-links {

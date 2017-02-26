@@ -111,13 +111,14 @@ app.post('/submit', function(req, res) {
           message: 'An error occurred while subscribing. Please try again in a few minutes.'
         }
       });
-    } else
+    } else {
       console.log('Subscribed: %s', email);
       res.render('subscribe', {
         title: 'Subscribed to Giraffe Watch!',
         email: email
       });
-  
+    }
+  });
 });
 
 app.get('/comments', function(req, res) {

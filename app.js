@@ -59,6 +59,12 @@ app.get('/privacy', function (req, res) {
   });
 });
 
+app.get('/unsubscribe', function(req, res) {
+  res.render('unsubscribe', {
+    title: 'Unsubscribe from Giraffe Watch'
+  });
+});
+
 app.get('/submit', function(req, res) {
   res.render('subscribe', {
     title: 'Subscribed to Giraffe Watch!',

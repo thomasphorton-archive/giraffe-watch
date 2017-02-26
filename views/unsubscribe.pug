@@ -1,0 +1,25 @@
+html
+  include partials/head.pug
+  body
+    include partials/nav.pug
+    .container
+      .row
+        .col-md-8
+          h1 Unsubscribe from Giraffe Watch
+
+          include partials/ad.pug
+          include partials/alert.pug
+
+          p We're sad to see you go! Unfortunately our process isn't super automated, so to unsubscribe  <a href='mailto:thomasphorton+giraffe-watch@gmail.com?subject=Unsubscribe'>send an email</a> containing your phone number and I'll make sure it gets taken off of the list.
+
+          p Since it's such a manual process, it might take a little bit of time for me to get to it- and if this giraffe starts to come I'm dropping what I'm doing to let everyone else know.
+
+          p To unsubscribe,  <a href='mailto:thomasphorton+giraffe-watch@gmail.com?subject=Unsubscribe'>send me an email</a> containing your phone number.
+
+          include partials/donate.pug
+          include partials/facebook.pug
+
+        .col-md-4
+          include partials/twitter.pug
+
+    include partials/footer.pug

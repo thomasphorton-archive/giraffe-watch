@@ -3,17 +3,22 @@ html
   body
     include partials/nav.pug
     .container
-      .col
-        h1 Giraffe Watch
+      .row
+        .col-md-8
+          h1 Giraffe Watch
 
-        include partials/ad.pug
-        include partials/alert.pug
+          include partials/ad.pug
+          include partials/alert.pug
 
-        h2 You did it!
-        p You've subscribed the phone number <strong>#{phoneNumber}</strong> to Giraffe Watch. Now get back to your day!
+          h2 You did it!
+          p You've subscribed the phone number <strong>#{phoneNumber}</strong> to Giraffe Watch. Now get back to your day!
 
-        include partials/donate.pug
+          include partials/donate.pug
+          include partials/facebook.pug
 
-        p Make sure you share with your friends!
+        .col-md-4
+          include partials/twitter.pug
 
     include partials/footer.pug
+
+    

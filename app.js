@@ -31,7 +31,7 @@ app.get('/', function (req, res) {
   console.log('GET index');
 
   res.render('index', {
-    title: 'Title'
+    title: 'Giraffe Watch!'
   });
 });
 
@@ -39,7 +39,7 @@ app.get('/watch', function (req, res) {
   console.log('GET watch');
 
   res.render('watch', {
-    title: 'Title'
+    title: 'Watch April the Giraffe Give Birth'
   });
 });
 
@@ -47,21 +47,29 @@ app.get('/facts', function (req, res) {
   console.log('GET facts');
 
   res.render('facts', {
-    title: 'Title'
+    title: 'Top Giraffe Facts'
   });
 });
 
 app.get('/privacy', function (req, res) {
   console.log('GET privacy');
+
   res.render('privacy', {
-    title: 'Title'
+    title: 'Giraffe Watch 2017 Privacy Policy'
   });
 });
 
+app.get('/submit', function(req, res) {
+  res.render('subscribe', {
+    title: 'Subscribed to Giraffe Watch!',
+    phoneNumber: 'X-XXX-XXX-XXXX'
+  });
+})
+
 app.post('/submit', function(req, res) {
   console.log('POST submit');
-  var phoneNumber = req.body.phoneNumber;
 
+  var phoneNumber = req.body.phoneNumber;
   if (phoneNumber.length == 11) {
     var params = {
       Protocol: 'sms',
@@ -75,6 +83,7 @@ app.post('/submit', function(req, res) {
         console.log(err, err.stack);
 
         res.render('index', {
+          title: 'Giraffe Watch!',
           alert: {
             type: 'danger',
             message: 'An error occurred while subscribing. Please try again in a few minutes.'
@@ -83,12 +92,14 @@ app.post('/submit', function(req, res) {
       } else
         console.log('Subscribed: %s', phoneNumber);
         res.render('subscribe', {
+          title: 'Subscribed to Giraffe Watch!',
           phoneNumber: phoneNumber
         });
     });
   } else {
     res.render('index', {
       alert: {
+        title: 'Giraffe Watch!',
         type: 'danger',
         message: 'Could not subscribe that number. Phone numbers must be 11 digits, including the country code (1-XXX-YYY-ZZZZ).'
       }

@@ -3,20 +3,25 @@ html
   body
     include partials/nav.pug
     .container
-      .col
-        h1 Giraffe Watch
+      .row
+        .col-md-8
+          h1 Giraffe Watch
 
-        include partials/ad.pug
-        include partials/alert.pug
+          include partials/ad.pug
+          include partials/alert.pug
 
-        h2 Animal Adventure Park Giraffe Cam
-      
-        iframe(width='560' height='315' src='https://www.youtube.com/embed/ZuYR4cTNbB0' frameborder='0' allowfullscreen).youtube
+          h2 Animal Adventure Park Giraffe Cam
+        
+          iframe(width='560' height='315' src='https://www.youtube.com/embed/ZuYR4cTNbB0' frameborder='0' allowfullscreen).youtube
 
-        p The Animal Adventure Park giraffe April is expecting! People have been watching for days now, but the 'active labor' hasn't started yet.
+          p The Animal Adventure Park giraffe April is expecting! People have been watching for days now, but the 'active labor' hasn't started yet.
 
-        p <a href='/' title='Giraffe birth alert'>Sign up for our text alerts</a> and we'll do our best to make sure you know when it's worth tuning in.
+          p <a href='/' title='Giraffe birth alert'>Sign up for our text alerts</a> and we'll do our best to make sure you know when it's worth tuning in.
 
-        include partials/donate.pug
+          include partials/donate.pug
+          include partials/facebook.pug
+
+        .col-md-4
+          include partials/twitter.pug
 
     include partials/footer.pug

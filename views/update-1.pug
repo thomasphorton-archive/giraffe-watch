@@ -1,0 +1,40 @@
+html
+  include partials/head.pug
+  body
+    include partials/nav.pug
+    .container
+      .row
+        .col-md-8
+          h1 Giraffe Watch Update
+
+          include partials/ad.pug
+          include partials/alert.pug
+
+          p If you're here- the message worked! 
+
+          h2 The giraffe has not been born yet.
+
+          p I know, right? Trust me- I'm bummed out too. So I've got a request for you all. I'm getting tired. I need to go to work tomorrow. I can't keep this going for much longer.
+
+          h2 So we're crowd sourcing!
+
+          p I've added a button on the <a href='/watch'>Giraffe Watch Stream</a> that you can click if you see something important happen. That message will get sent over to me, and if I see enough activity I'll verify it myself and start letting everyone know.
+
+          p Alternatively, if you're really excited about it, <a href='mailto:thomasphorton+giraffe-watch@gmail.com?subject=Giraffe Activity'>shoot me an email</a> and I'll respond quickly.
+
+          h2 While You're Waiting
+          ul
+            li Watch <a href='/comments'>the giraffe stream</a> and click the button to report important activity.
+            li Drop a line on the <a href='/comments'>comments page</a>.
+            li Make a donation to the <a href='https://www.gofundme.com/ApriltheGiraffe'>Official April the Giraffe GoFundMe</a> (You can verify that this is legit by looking at the description in the <a href='https://www.youtube.com/watch?v=ZuYR4cTNbB0&feature=youtu.be'>official YouTube stream</a>).
+
+          img(src='assets/giraffe-watch.jpg').max-width
+
+          include partials/donate.pug
+          include partials/facebook.pug
+
+        .col-md-4
+          include partials/twitter.pug
+          include partials/amazon-ad.pug
+
+    include partials/footer.pug

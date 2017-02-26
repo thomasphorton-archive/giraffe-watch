@@ -35,6 +35,14 @@ app.get('/', function (req, res) {
   });
 });
 
+app.get('/update-1', function (req, res) {
+  console.log('GET update-1');
+
+  res.render('update-1', {
+    title: 'Giraffe Watch Update 1!'
+  });
+});
+
 app.get('/watch', function (req, res) {
   console.log('GET watch');
 

@@ -12,7 +12,9 @@ html
 
           h2 Animal Adventure Park Giraffe Cam
         
-          iframe(width='560' height='315' src='https://www.youtube.com/embed/ZuYR4cTNbB0' frameborder='0' allowfullscreen).youtube
+          iframe(width='560' height='315' src='https://www.youtube.com/embed/ZuYR4cTNbB0' frameborder='0' allowfullscreen).max-width
+
+          a(href='javascript:void()').btn.btn-primary.btn-lg#giraffe-event Something's Happening!
 
           p The Animal Adventure Park giraffe April is expecting! People have been watching for days now, but the 'active labor' hasn't started yet.
 
@@ -26,3 +28,8 @@ html
           include partials/amazon-ad.pug
 
     include partials/footer.pug
+
+    script.
+      document.getElementById('giraffe-event').onclick = function() {
+        ga('send', 'event', 'Giraffe Cam', 'Click', location.href);
+      }

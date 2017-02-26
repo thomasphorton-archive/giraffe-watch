@@ -31,7 +31,11 @@ app.get('/', function (req, res) {
   console.log('GET index');
 
   res.render('index', {
-    title: 'Giraffe Watch!'
+    title: 'Giraffe Watch!',
+    alert: {
+      type: 'danger',
+      message: 'Turns out people want this- we\'re experiencing issues with the high volume of text messages going out. Stay tuned for updates.'
+    }
   });
 });
 
@@ -116,8 +120,8 @@ app.post('/submit', function(req, res) {
     });
   } else {
     res.render('index', {
+      title: 'Giraffe Watch!',
       alert: {
-        title: 'Giraffe Watch!',
         type: 'danger',
         message: 'Could not subscribe that number. Phone numbers must be 11 digits, including the country code (1-XXX-YYY-ZZZZ).'
       }

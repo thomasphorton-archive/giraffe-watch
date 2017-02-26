@@ -60,12 +60,16 @@ app.get('/privacy', function (req, res) {
 });
 
 app.get('/unsubscribe', function(req, res) {
+  console.log('GET unsubscribe');
+
   res.render('unsubscribe', {
     title: 'Unsubscribe from Giraffe Watch'
   });
 });
 
 app.get('/submit', function(req, res) {
+  console.log('GET submit');
+
   res.render('subscribe', {
     title: 'Subscribed to Giraffe Watch!',
     phoneNumber: 'X-XXX-XXX-XXXX'

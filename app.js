@@ -33,8 +33,8 @@ app.get('/', function (req, res) {
   res.render('index', {
     title: 'Giraffe Watch!',
     alert: {
-      type: 'danger',
-      message: 'Turns out people want this- we\'re experiencing issues with the high volume of text messages going out. Stay tuned for updates.'
+      type: 'success',
+      message: 'Too many phone numbers! We\'ve hit a limit so we\'re switching over to email notifications. Sorry for the inconvenience! Please let everyone know to re-subscribe using email.'
     }
   });
 });

@@ -101,7 +101,7 @@ app.post('/submit', function(req, res) {
 
   sns.subscribe(params, function(err, data) {
     if (err) {
-      console.log('sns subscribe error');
+      console.log('sns subscribe error: "%s"', email);
       console.log(err, err.stack);
 
       res.render('index', {

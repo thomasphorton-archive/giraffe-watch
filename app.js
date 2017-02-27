@@ -10,7 +10,8 @@ var sns = new AWS.SNS({
 });
 
 var config = {
-  port: 80
+  port: 80,
+  topicArn: 'arn:aws:sns:us-west-2:484448430090:giraffe-watch'
 }
 
 var exports = {};
@@ -95,7 +96,7 @@ app.post('/submit', function(req, res) {
 
   var params = {
     Protocol: 'email',
-    TopicArn: 'arn:aws:sns:us-west-2:847623936431:giraffe-watch',
+    TopicArn: config.topicArn,
     Endpoint: email
   };
 

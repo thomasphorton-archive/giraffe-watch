@@ -53,8 +53,7 @@ app.get('/watch', function (req, res) {
   console.log('GET watch');
 
   res.render('watch', {
-    title: 'Watch April the Giraffe Give Birth',
-    alert: siteAlert
+    title: 'Watch April the Giraffe Give Birth'
   });
 });
 
@@ -62,8 +61,7 @@ app.get('/facts', function (req, res) {
   console.log('GET facts');
 
   res.render('facts', {
-    title: 'Top Giraffe Facts',
-    alert: siteAlert
+    title: 'Top Giraffe Facts'
   });
 });
 
@@ -71,8 +69,7 @@ app.get('/privacy', function (req, res) {
   console.log('GET privacy');
 
   res.render('privacy', {
-    title: 'Giraffe Watch 2017 Privacy Policy',
-    alert: siteAlert
+    title: 'Giraffe Watch 2017 Privacy Policy'
   });
 });
 
@@ -80,8 +77,7 @@ app.get('/unsubscribe', function(req, res) {
   console.log('GET unsubscribe');
 
   res.render('unsubscribe', {
-    title: 'Unsubscribe from Giraffe Watch',
-    alert: siteAlert
+    title: 'Unsubscribe from Giraffe Watch'
   });
 });
 
@@ -90,8 +86,7 @@ app.get('/submit', function(req, res) {
 
   res.render('subscribe', {
     title: 'Subscribed to Giraffe Watch!',
-    email: 'test@example.com',
-    alert: siteAlert
+    email: 'test@example.com'
   });
 });
 

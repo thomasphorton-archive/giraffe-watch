@@ -36,3 +36,18 @@ sub {
   display: inline-block;
   margin-right: 0.5em;
 }
+
+.img-shirt {
+  max-width: 300px;
+  margin-bottom: 1em;
+  display: block;
+}
+
+.form-subscribe {
+  margin-top: 1em;
+}
+
+.shirt {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}

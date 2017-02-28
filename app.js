@@ -24,6 +24,11 @@ var sessionParams = {
   keys: ['secret']
 }
 
+var siteAlert = {
+  type: 'danger',
+  message: 'We\'re experiencing slowdowns subscribing new users!'
+}
+
 app.use(cookieSession(sessionParams));
 app.use(express.static('public'))
 app.use(bodyParser.urlencoded({extended: true}));
@@ -48,7 +53,8 @@ app.get('/watch', function (req, res) {
   console.log('GET watch');
 
   res.render('watch', {
-    title: 'Watch April the Giraffe Give Birth'
+    title: 'Watch April the Giraffe Give Birth',
+    alert: siteAlert
   });
 });
 
@@ -56,7 +62,8 @@ app.get('/facts', function (req, res) {
   console.log('GET facts');
 
   res.render('facts', {
-    title: 'Top Giraffe Facts'
+    title: 'Top Giraffe Facts',
+    alert: siteAlert
   });
 });
 
@@ -64,7 +71,8 @@ app.get('/privacy', function (req, res) {
   console.log('GET privacy');
 
   res.render('privacy', {
-    title: 'Giraffe Watch 2017 Privacy Policy'
+    title: 'Giraffe Watch 2017 Privacy Policy',
+    alert: siteAlert
   });
 });
 
@@ -72,7 +80,8 @@ app.get('/unsubscribe', function(req, res) {
   console.log('GET unsubscribe');
 
   res.render('unsubscribe', {
-    title: 'Unsubscribe from Giraffe Watch'
+    title: 'Unsubscribe from Giraffe Watch',
+    alert: siteAlert
   });
 });
 
@@ -81,7 +90,8 @@ app.get('/submit', function(req, res) {
 
   res.render('subscribe', {
     title: 'Subscribed to Giraffe Watch!',
-    email: 'test@example.com'
+    email: 'test@example.com',
+    alert: siteAlert
   });
 });
 
@@ -103,10 +113,11 @@ app.post('/submit', function(req, res) {
 
       res.render('index', {
         title: 'Giraffe Watch!',
-        alert: {
+        subscribeAlert: {
           type: 'danger',
           message: 'An error occurred while subscribing. Please try again in a few minutes.'
-        }
+        },
+        alert: siteAlert
       });
     } else {
       console.log('Subscribed: %s', email);

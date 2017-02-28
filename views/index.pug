@@ -13,6 +13,9 @@ html
           h2 Sign up for a Giraffe Birth Alert!
           p Enter your email address below to be alerted when anything important happens. We promise not to spam you, this is just to help you all get back to work!
 
+          if subscribeAlert
+            .alert(role='alert' class='alert-' + subscribeAlert.type)= subscribeAlert.message
+
           form(method='post' action='/submit')
             .form-group
               input(type='email' placeholder='Enter Your Email Address' name='email' required).form-control

@@ -61,6 +61,10 @@ sub {
   margin-bottom: 1em;
 }
 
+#notification-result {
+  display: none;
+}
+
 .iframe-youtube {
   width: 100%;
   height: 410px;

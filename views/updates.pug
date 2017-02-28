@@ -17,8 +17,11 @@ html
 
           a(href='javascript:void()').btn.btn-primary.btn-lg.btn-block#notification-test Push it, Push it Good!
 
+          p#notification-result Got it! Thank you! <a href='/watch'>Click here to view the live stream</a>
+
           script.
             document.getElementById('notification-test').onclick = function() {
+              document.getElementById('notification-result').style.display = 'block';
               ga('send', 'event', 'Notification Test', 'Click', location.href);
             }
 

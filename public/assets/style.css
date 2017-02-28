@@ -61,7 +61,8 @@ sub {
   margin-bottom: 1em;
 }
 
-#notification-result {
+#notification-result,
+#giraffe-event-result {
   display: none;
 }
 

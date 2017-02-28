@@ -56,7 +56,8 @@ sub {
   margin-botom: 1em;
 }
 
-#btn-fb-share {
+#btn-fb-share,
+#notification-test {
   margin-bottom: 1em;
 }
 

@@ -11,7 +11,7 @@ var sns = new AWS.SNS({
 
 var config = {
   port: 80,
-  topicArn: 'arn:aws:sns:us-west-2:484448430090:giraffe-watch'
+  topicArn: 'arn:aws:sns:us-west-2:484448430090:giraffe-watch-2'
 }
 
 var exports = {};
@@ -32,11 +32,7 @@ app.get('/', function (req, res) {
   console.log('GET index');
 
   res.render('index', {
-    title: 'Giraffe Watch!',
-    alert: {
-      type: 'danger',
-      message: 'We\'re at capacity! Follow us on social media for further alerts.'
-    }
+    title: 'Giraffe Watch!'
   });
 });
 
@@ -44,11 +40,7 @@ app.get('/update-1', function (req, res) {
   console.log('GET update-1');
 
   res.render('update-1', {
-    title: 'Giraffe Watch Update 1!',
-    alert: {
-      type: 'danger',
-      message: 'We\'re at capacity! Follow us on social media for further alerts.'
-    }
+    title: 'Giraffe Watch Update 1!'
   });
 });
 
@@ -56,11 +48,7 @@ app.get('/watch', function (req, res) {
   console.log('GET watch');
 
   res.render('watch', {
-    title: 'Watch April the Giraffe Give Birth',
-    alert: {
-      type: 'danger',
-      message: 'We\'re at capacity! Follow us on social media for further alerts.'
-    }
+    title: 'Watch April the Giraffe Give Birth'
   });
 });
 
@@ -68,11 +56,7 @@ app.get('/facts', function (req, res) {
   console.log('GET facts');
 
   res.render('facts', {
-    title: 'Top Giraffe Facts',
-    alert: {
-      type: 'danger',
-      message: 'We\'re at capacity! Follow us on social media for further alerts.'
-    }
+    title: 'Top Giraffe Facts'
   });
 });
 
@@ -80,11 +64,7 @@ app.get('/privacy', function (req, res) {
   console.log('GET privacy');
 
   res.render('privacy', {
-    title: 'Giraffe Watch 2017 Privacy Policy',
-    alert: {
-      type: 'danger',
-      message: 'We\'re at capacity! Follow us on social media for further alerts.'
-    }
+    title: 'Giraffe Watch 2017 Privacy Policy'
   });
 });
 
@@ -92,11 +72,7 @@ app.get('/unsubscribe', function(req, res) {
   console.log('GET unsubscribe');
 
   res.render('unsubscribe', {
-    title: 'Unsubscribe from Giraffe Watch',
-    alert: {
-      type: 'danger',
-      message: 'We\'re at capacity! Follow us on social media for further alerts.'
-    }
+    title: 'Unsubscribe from Giraffe Watch'
   });
 });
 
@@ -105,11 +81,7 @@ app.get('/submit', function(req, res) {
 
   res.render('subscribe', {
     title: 'Subscribed to Giraffe Watch!',
-    email: 'test@example.com',
-    alert: {
-      type: 'danger',
-      message: 'We\'re at capacity! Follow us on social media for further alerts.'
-    }
+    email: 'test@example.com'
   });
 });
 

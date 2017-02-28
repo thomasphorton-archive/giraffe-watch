@@ -10,6 +10,15 @@ html
           include partials/ad.pug
           include partials/alert.pug
 
+          h2 Sign up for a Giraffe Birth Alert!
+          p Enter your email address below to be alerted when anything important happens. We promise not to spam you, this is just to help you all get back to work!
+
+          form(method='post' action='/submit')
+            .form-group
+              input(type='email' placeholder='Enter Your Email Address' name='email' required).form-control
+            .form-group
+              button(type='submit').btn.btn-primary.btn-lg Submit
+
           h2 What is this?
           p April the Giraffe is pregnant and is expecting any day now. People are <strong>obsessed</strong>. I built this tool to subscribe people to a notification when something worth watching happens.
 

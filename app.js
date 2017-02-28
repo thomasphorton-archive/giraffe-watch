@@ -34,8 +34,8 @@ app.get('/', function (req, res) {
   res.render('index', {
     title: 'Giraffe Watch!',
     alert: {
-      type: 'success',
-      message: 'Too many phone numbers! We\'ve hit a limit so we\'re switching over to email notifications. Sorry for the inconvenience! Please let everyone know to re-subscribe using email.'
+      type: 'danger',
+      message: 'We\'re at capacity! Follow us on social media for further alerts.'
     }
   });
 });
@@ -44,7 +44,11 @@ app.get('/update-1', function (req, res) {
   console.log('GET update-1');
 
   res.render('update-1', {
-    title: 'Giraffe Watch Update 1!'
+    title: 'Giraffe Watch Update 1!',
+    alert: {
+      type: 'danger',
+      message: 'We\'re at capacity! Follow us on social media for further alerts.'
+    }
   });
 });
 
@@ -52,7 +56,11 @@ app.get('/watch', function (req, res) {
   console.log('GET watch');
 
   res.render('watch', {
-    title: 'Watch April the Giraffe Give Birth'
+    title: 'Watch April the Giraffe Give Birth',
+    alert: {
+      type: 'danger',
+      message: 'We\'re at capacity! Follow us on social media for further alerts.'
+    }
   });
 });
 
@@ -60,7 +68,11 @@ app.get('/facts', function (req, res) {
   console.log('GET facts');
 
   res.render('facts', {
-    title: 'Top Giraffe Facts'
+    title: 'Top Giraffe Facts',
+    alert: {
+      type: 'danger',
+      message: 'We\'re at capacity! Follow us on social media for further alerts.'
+    }
   });
 });
 
@@ -68,7 +80,11 @@ app.get('/privacy', function (req, res) {
   console.log('GET privacy');
 
   res.render('privacy', {
-    title: 'Giraffe Watch 2017 Privacy Policy'
+    title: 'Giraffe Watch 2017 Privacy Policy',
+    alert: {
+      type: 'danger',
+      message: 'We\'re at capacity! Follow us on social media for further alerts.'
+    }
   });
 });
 
@@ -76,7 +92,11 @@ app.get('/unsubscribe', function(req, res) {
   console.log('GET unsubscribe');
 
   res.render('unsubscribe', {
-    title: 'Unsubscribe from Giraffe Watch'
+    title: 'Unsubscribe from Giraffe Watch',
+    alert: {
+      type: 'danger',
+      message: 'We\'re at capacity! Follow us on social media for further alerts.'
+    }
   });
 });
 
@@ -85,7 +105,11 @@ app.get('/submit', function(req, res) {
 
   res.render('subscribe', {
     title: 'Subscribed to Giraffe Watch!',
-    email: 'test@example.com'
+    email: 'test@example.com',
+    alert: {
+      type: 'danger',
+      message: 'We\'re at capacity! Follow us on social media for further alerts.'
+    }
   });
 });
 

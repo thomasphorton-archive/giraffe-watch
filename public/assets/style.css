@@ -53,5 +53,15 @@ sub {
 }
 
 #giraffe-event {
-  margin-top: 1em;
+  margin-botom: 1em;
+}
+
+#btn-fb-share {
+  margin-bottom: 1em;
+}
+
+.iframe-youtube {
+  width: 100%;
+  height: 410px;
+  margin-bottom: 1em;
 }

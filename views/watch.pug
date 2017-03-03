@@ -13,17 +13,15 @@ html
 
           iframe(src='https://www.youtube.com/embed/ZuYR4cTNbB0' frameborder='0' allowfullscreen).max-width.iframe-youtube
 
-          h2 We are currently away from the computer
+          h2 Click below to report active labor
 
-          a(href='mailto:thomasphorton+giraffe-watch@gmail.com?subject=Giraffe Activity').btn.btn-primary.btn-lg.btn-block#giraffe-event Wake Us Up!
-
-          p#giraffe-event-result Thanks for the heads up! We'll check it out shortly.
+          include partials/active-labor-button.pug
 
           h3 What is #GiraffeWatch?
 
           p The Animal Adventure Park giraffe April is expecting! People have been watching for days now, but the 'active labor' hasn't started yet.
 
-          p Click the 'Wake Us Up!' button above to help report April's active labor.
+          p Click the big blue button above to help report April's active labor.
 
           include partials/donate.pug
           include partials/facebook.pug
@@ -33,8 +31,3 @@ html
 
     include partials/footer.pug
 
-    script.
-      document.getElementById('giraffe-event').onclick = function() {
-        document.getElementById('giraffe-event-result').style.display = 'block';
-        ga('send', 'event', 'Giraffe Cam', 'Click', location.href);
-      }

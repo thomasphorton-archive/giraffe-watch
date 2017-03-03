@@ -10,7 +10,7 @@ html
           include partials/alert.pug
 
           h2 Sign up for a Giraffe Birth Alert!
-          p Enter your email address below to be alerted when anything important happens. We promise not to spam you, this is just to help you all get back to work!
+          p Enter your email address below to be alerted when April begins active labor.
 
           if subscribeAlert
             .alert(role='alert' class='alert-' + subscribeAlert.type)= subscribeAlert.message
@@ -23,6 +23,11 @@ html
 
           h2 What is this?
           p April the Giraffe is pregnant and is expecting any day now. People are <strong>obsessed</strong>. I built this tool to subscribe people to a notification when something worth watching happens.
+
+          h2 How does it work?
+          p We rely on our community of over 25,000 giraffe fanatics to let us know when April goes into active labor. To report activity, click one of the 'Report Active Labor' buttons around the site to send us an email.
+
+          include partials/active-labor-button.pug
 
           p 
             strong We are not affiliated with Animal Adventure Park.

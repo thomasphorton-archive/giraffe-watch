@@ -51,7 +51,7 @@ app.get('/update-1', function (req, res) {
 });
 
 app.get('/updates', function (req, res) {
-  console.log('GET update-1');
+  console.log('GET updates');
 
   res.render('updates', {
     title: 'Latest News - Giraffe Watch!',

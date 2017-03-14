@@ -8,7 +8,7 @@ var AWS = require('aws-sdk');
 
 var config = {
   port: 80,
-  topicArn: 'arn:aws:sns:us-west-2:484448430090:giraffe-watch-2'
+  topicArn: 'arn:aws:sns:us-west-2:306876529159:giraffe-watch'
 }
 
 var sts = new AWS.STS();
@@ -110,35 +110,56 @@ app.post('/submit', function(req, res) {
 
   var email = req.body.email;
 
-  var params = {
-    Protocol: 'email',
-    TopicArn: config.topicArn,
-    Endpoint: email
+  var stsParams = {
+    RoleArn: 'arn:aws:iam::306876529159:role/giraffe-watch-cross-account',
+    RoleSessionName: 'giraffe-watch'
   };
 
-  var sns = new AWS.SNS({
-    region: 'us-west-2'
-  });
-
-  sns.subscribe(params, function(err, data) {
+  sts.assumeRole(stsParams, function(err, data) {
     if (err) {
-      console.log('sns subscribe error: "%s"', email);
       console.log(err, err.stack);
-
       res.render('index', {
         title: 'Giraffe Watch!',
         subscribeAlert: {
           type: 'danger',
-          message: 'An error occurred while subscribing. Please try again in a few minutes.'
+          message: 'An error occured while subscribing. Please try again in a few minutes.'
         },
         alert: siteAlert
       });
     } else {
-      console.log('Subscribed: %s', email);
-      res.render('subscribe', {
-        title: 'Subscribed to Giraffe Watch!',
-        email: email,
-        alert: siteAlert
+      var params = {
+        Protocol: 'email',
+        TopicArn: config.topicArn,
+        Endpoint: email
+      };
+
+      var sns = new AWS.SNS({
+        region: 'us-west-2',
+        accessKeyId: data.Credentials.AccessKeyId,
+        secretAccessKey: data.Credentials.SecretAccessKey,
+        sessionToken: data.Credentials.SessionToken
+      });
+
+      sns.subscribe(params, function(err, data) {
+        if (err) {
+          console.log('sns subscribe error: "%s"', email);
+          console.log(err, err.stack);
+
+          res.render('index', {
+            title: 'Giraffe Watch!',
+            subscribeAlert: {
+              type: 'danger',
+              message: 'An error occurred while subscribing. Please try again in a few minutes.'
+            },
+            alert: siteAlert
+          });
+        } else {
+          console.log('Subscribed: %s', email);
+          res.render('subscribe', {
+            title: 'Subscribed to Giraffe Watch!',
+            email: email
+          });
+        }
       });
     }
   });

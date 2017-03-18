@@ -24,9 +24,8 @@ var sessionParams = {
 }
 
 var siteAlert = {
-  type: 'success',
-  message: 'A new message has been posted on our <a href="/updates">updates</a> page!'
-}
+  type: 'none'
+};
 
 app.use(cookieSession(sessionParams));
 app.use(express.static('public'))
@@ -168,6 +167,15 @@ app.post('/submit', function(req, res) {
 app.get('/comments', function(req, res) {
   res.render('comments', {
     title: 'Giraffe Watch Discusion!'
+  });
+});
+
+app.get('/health', function (req, res) {
+  console.log('GET health');
+
+  res.render('health', {
+    title: 'Giraffe Watch!',
+    alert: siteAlert
   });
 });
 

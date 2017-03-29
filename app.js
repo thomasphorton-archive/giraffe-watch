@@ -8,8 +8,10 @@ var AWS = require('aws-sdk');
 
 var config = {
   port: 80,
-  topicArn: 'arn:aws:sns:us-west-2:790822200413:giraffe-watch'
+  snsAccountID: '608816279337'
 }
+
+config.topicArn = 'arn:aws:sns:us-west-2:' + config.snsAccountID + ':giraffe-watch';
 
 var sts = new AWS.STS();
 
@@ -110,7 +112,7 @@ app.post('/submit', function(req, res) {
   var email = req.body.email;
 
   var stsParams = {
-    RoleArn: 'arn:aws:iam::790822200413:role/giraffe-watch-cross-account',
+    RoleArn: 'arn:aws:iam::' + config.snsAccountID + ':role/giraffe-watch-cross-account',
     RoleSessionName: 'giraffe-watch'
   };
 
